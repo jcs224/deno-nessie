@@ -39,4 +39,5 @@ export enum DB_CLIENTS {
   mysql = "ClientMySQL",
   mysql55 = "ClientMySQL55",
   sqlite = "ClientSQLite",
+  cockroach = "ClientCockroachDB",
 }
