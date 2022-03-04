@@ -51,8 +51,8 @@ export class ClientCockroachDB extends AbstractClient<PostgreSQLClient> {
     const queryResult = await this.client
       .queryArray(this.QUERY_MIGRATION_TABLE_EXISTS);
 
-    const migrationTableExists =
-      queryResult.rows.length > 0 && queryResult.rows?.[0].includes(TABLE_MIGRATIONS);
+    const migrationTableExists = queryResult.rows.length > 0 &&
+      queryResult.rows?.[0].includes(TABLE_MIGRATIONS);
 
     if (!migrationTableExists) {
       await this.client.queryArray(this.QUERY_CREATE_MIGRATION_TABLE);
